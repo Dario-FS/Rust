@@ -11,32 +11,33 @@
 // struct Color(u8, u8, u8);
 
 struct Person {
-  first_name: String,
-  last_name: String,
+  name: String,
+  age: u8,
 }
-
+#[payable]
+#[private]
 impl Person {
   // Construct person
-  fn new(first: &str, last: &str) -> Person {
+  fn new(first: &str, last: u8) -> Person {
     Person {
-      first_name: first.to_string(),
-      last_name: last.to_string(),
+      name: first.to_string(),
+      age: last
     }
   }
 
   // Get full name
   fn full_name(&self) -> String {
-    format!("{} {}", self.first_name, self.last_name)
+    format!("{} {}", self.name, self.age)
   }
 
-  // Set last name
-  fn set_last_name(&mut self, last: &str) {
-    self.last_name = last.to_string();
+  // Set age
+  fn set_age(&mut self, last: u8) {
+    self.age = last
   }
 
-  // Name to tuple
-  fn to_tuple(self) -> (String, String) {
-    (self.first_name, self.last_name)
+  // Data to tuple
+  fn to_tuple(self) -> (String, u8) {
+    (self.name, self.age)
   }
 }
 
@@ -57,9 +58,9 @@ pub fn run() {
 
   // println!("Color: {} {} {}", c.0, c.1, c.2);
 
-  let mut p = Person::new("Mary", "Doe");
+  let mut p = Person::new("Mary", 18);
   println!("Person {}", p.full_name());
-  p.set_last_name("Williams");
+  p.set_age(19);
   println!("Person {}", p.full_name());
   println!("Person Tuple {:?}", p.to_tuple());
 }

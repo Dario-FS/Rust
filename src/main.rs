@@ -11,7 +11,19 @@
 // mod pointer_ref;
 // mod structs;
 // mod enums;
-mod cli;
+// mod cli;
+// mod references;
+// mod polymorphism;
+// mod options;
+// mod hashmap;
+// mod casting;
+// mod impl_traits;
+// mod impl_iterator;
+// mod generics;
+// mod boxs;
+// mod closures;
+// mod iterators;
+mod lifetimes;
 
 fn main() {
     // print::run();
@@ -27,5 +39,17 @@ fn main() {
     // pointer_ref::run();
     // structs::run();
     // enums::run();
-    cli::run();
+    // cli::run();
+    // references::run()
+    // polymorphism::run()
+    // options::run();
+    // hashmap::run();
+    // casting::run();
+    // impl_traits::run();
+    // impl_iterator::run();
+    // generics::run();
+    // boxs::run();
+    // closures::run();
+    // iterators::run();
+    lifetimes::run();
 }

@@ -3,7 +3,7 @@ Primitive Types--
 Integers: u8, i8, u16, i16, u32, i32, u64, i64, u128, i128 (number of bits they take in memory)
 Floats: f32, f64
 Boolean (bool)
-Characters (char)
+Characters (char) //one character 
 Tuples
 Arrays
 */
@@ -30,7 +30,10 @@ pub fn run() {
   // Get boolean from expression
   let is_greater: bool = 10 < 5;
 
+  // Char
   let a1 = 'a';
+
+  // Unicode
   let face = '\u{1F600}';
 
   println!("{:?}", (x, y, z, is_active, is_greater, a1, face));

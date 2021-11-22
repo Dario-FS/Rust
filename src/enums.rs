@@ -18,6 +18,31 @@ fn move_avatar(m: Movement) {
   }
 }
 
+fn matching_single(n: u8) {
+  match n {
+    1 => println!("is one"),
+    2|3|5|7|11 => println!("is prime"),
+    12..=19 => println!("between 12 and 19"),
+    _ => println!("other"),
+  }
+}
+
+fn matching_tuple(a: i8, b: i8) {
+  match (a,b) {
+    (0, y) => println!("y: {}", y),
+    (x, 0) => println!("y: {}", x),
+    _ => println!("No match"),
+  }
+}
+
+fn matching_including(v: u8) {
+  match v {
+    v @ 0..=5  => println!("{} is between 0 and 5", v),
+    v @ 6..=10  => println!("{} is between 6 and 10", v),
+    _ => println!("other"),
+  }
+}
+
 pub fn run() {
   let avatar1 = Movement::Left;
   let avatar2 = Movement::Up;
@@ -28,4 +53,12 @@ pub fn run() {
   move_avatar(avatar2);
   move_avatar(avatar3);
   move_avatar(avatar4);
+
+  let n = 9;
+  matching_single(n);
+
+  let pair: (i8, i8) = (0, -1);
+  matching_tuple(pair.0, pair.1);
+
+  matching_including(n)
 }
